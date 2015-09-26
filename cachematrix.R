@@ -2,11 +2,11 @@
 ## I use a different style of figure brackets where each open bracket appears on its own line
 ## I use long names for variables
 
-## Write a short comment describing this function
+## This function stores the matrix passed ,creates empty variable to 
+## hold inverse Matrix ("inverseMatrix) and four functions to set/get original and inverse matrices
 
-## This function stroes the matrix passed (as "originalMatrix ), creates empty variable to 
-## hold inverse Matrix ("inverseMatrix)
-makeCacheMatrix <- function(originalMatrix = matrix()) {
+makeCacheMatrix <- function(originalMatrix = matrix()) 
+{
 	inverseMatrix<-NULL ##need to declare inverse of he matrix in the initialisation
 	
 	set<-function(newMatrix)
@@ -37,9 +37,10 @@ makeCacheMatrix <- function(originalMatrix = matrix()) {
 
 ## This function checks for the cached inverse. If found, it is returned with the warning message
 ## Otherwise the inverse matrix is calculated and saved
-## Due to assignment constraints 
+## Due to assignment constraints no error check performed
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(x, ...) 
+{
         ## Return a matrix that is the inverse of 'x'
 	currentInverseMatrix<-x$getInverse() ## get cached inverse
 	if (!is.null(currentInverseMatrix)) ##check if inverse is cached already
